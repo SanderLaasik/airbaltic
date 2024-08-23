@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: aws_raw
+    schema: aws_raw
+
+    tables:
+      - name: aeroplane_models
+
