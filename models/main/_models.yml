@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: aeroplane_engine_types
+    config:
+      alias: aeroplane_engine_type
+      
+  - name: aeroplane_manufacturers
+    config:
+      alias: aeroplane_manufacturer
+      
+  - name: aeroplane_models
+    config:
+      alias: aeroplane_model
+      
+  - name: customer_group_types
+    config:
+      alias: customer_group_type
+      
+  - name: customer_groups
+    config:
+      alias: customer_group
+      
+  - name: customers
+    config:
+      alias: customer
+      
+  - name: aeroplanes
+    config:
+      alias: aeroplane

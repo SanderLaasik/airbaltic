@@ -1,5 +1,9 @@
 WITH 
 
+planes AS (
+    SELECT *
+    FROM {{ ref('aeroplanes') }}
+),
 models AS (
     SELECT *
     FROM {{ ref('aeroplane_models') }}
@@ -14,17 +18,19 @@ engine_types AS (
 ),
 joined AS (
     SELECT 
-        model.model_id,
+        plane.aeroplane_id,
         manu.manufacturer_name,
         model.model_name,
         model.max_seats,
         model.max_weight,
         model.max_distance,
         engine.engine_type_name
-    FROM models as model
-    JOIN manufacturers AS manu
+    FROM planes AS plane
+    LEFT JOIN models as model
+        ON plane.model_id=model.model_id
+    LEFT JOIN manufacturers AS manu
         ON model.manufacturer_id=manu.manufacturer_id
-    join engine_types AS engine
+    LEFT join engine_types AS engine
         ON model.engine_type_id=engine.engine_type_id
 )
 SELECT * FROM joined

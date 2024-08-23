@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_aws__aeroplane_models
+    config:
+      alias: stg_aws__aeroplane_model
+
+  - name: stg_aws__customer_groups
+    config:
+      alias: stg_aws__customer_group
+
+  - name: stg_aws__customers
+    config:
+      alias: stg_aws__customer
+
+  - name: stg_aws__aeroplanes
+    config:
+      alias: stg_aws__aeroplane

@@ -38,5 +38,6 @@ models:
       +materialized: ephemeral
     main:
       +materialized: incremental
+      +incremental_strategy: insert_overwrite
     dmart:
       +materialized: view

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dm_aeroplanes_vw
+    config:
+      alias: dm_aeroplane_vw
+      
+  - name: dm_customers_vw
+    config:
+      alias: dm_customer_vw

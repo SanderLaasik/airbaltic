@@ -7,3 +7,8 @@ sources:
     tables:
       - name: aeroplane_models
 
+      - name: customer_groups
+
+      - name: customers
+      
+      - name: aeroplanes
