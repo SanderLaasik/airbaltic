@@ -2,7 +2,7 @@ WITH
 
 orders AS (
     SELECT *
-    FROM {{ ref('orders') }}
+    FROM {{ ref('trip_orders') }}
 ),
 customers AS (
     SELECT

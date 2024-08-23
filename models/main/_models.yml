@@ -37,6 +37,6 @@ models:
     config:
       alias: trip
       
-  - name: orders
+  - name: trip_orders
     config:
-      alias: order
+      alias: trip_order

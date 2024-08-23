@@ -13,6 +13,6 @@ models:
     config:
       alias: dm_trip_vw
       
-  - name: dm_orders_vw
+  - name: dm_trip_orders_vw
     config:
-      alias: dm_order_vw
+      alias: dm_trip_order_vw
