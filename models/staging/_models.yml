@@ -16,3 +16,11 @@ models:
   - name: stg_aws__aeroplanes
     config:
       alias: stg_aws__aeroplane
+
+  - name: stg_aws__trips
+    config:
+      alias: stg_aws__trip
+
+  - name: stg_aws__orders
+    config:
+      alias: stg_aws__order

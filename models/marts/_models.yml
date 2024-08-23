@@ -8,3 +8,11 @@ models:
   - name: dm_customers_vw
     config:
       alias: dm_customer_vw
+      
+  - name: dm_trips_vw
+    config:
+      alias: dm_trip_vw
+      
+  - name: dm_orders_vw
+    config:
+      alias: dm_order_vw

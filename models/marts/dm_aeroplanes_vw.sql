@@ -26,11 +26,11 @@ joined AS (
         model.max_distance,
         engine.engine_type_name
     FROM planes AS plane
-    LEFT JOIN models as model
+    JOIN models as model
         ON plane.model_id=model.model_id
-    LEFT JOIN manufacturers AS manu
+    JOIN manufacturers AS manu
         ON model.manufacturer_id=manu.manufacturer_id
-    LEFT join engine_types AS engine
+    JOIN engine_types AS engine
         ON model.engine_type_id=engine.engine_type_id
 )
 SELECT * FROM joined

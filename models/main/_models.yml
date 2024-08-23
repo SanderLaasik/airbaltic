@@ -28,3 +28,15 @@ models:
   - name: aeroplanes
     config:
       alias: aeroplane
+      
+  - name: cities
+    config:
+      alias: city
+      
+  - name: trips
+    config:
+      alias: trip
+      
+  - name: orders
+    config:
+      alias: order

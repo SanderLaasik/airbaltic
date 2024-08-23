@@ -10,5 +10,9 @@ sources:
       - name: customer_groups
 
       - name: customers
-      
+
       - name: aeroplanes
+      
+      - name: trips
+      
+      - name: orders
