@@ -38,6 +38,7 @@ models:
       +materialized: ephemeral
     main:
       +materialized: incremental
-      +incremental_strategy: insert_overwrite
+      +incremental_strategy: merge
+      +file_format: hudi
     dmart:
       +materialized: view

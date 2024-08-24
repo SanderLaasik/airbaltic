@@ -1,42 +1,217 @@
 version: 2
-
 models:
   - name: aeroplane_engine_types
     config:
       alias: aeroplane_engine_type
-      
+    description: Information about aeroplane engine types.
+    columns:
+      - name: engine_type_id
+        description: Unique identifier of an aeroplane engine type.
+        data_type: int
+        quote: true
+      - name: engine_type_name
+        description: Name of the engine type
+        data_type: string
+        quote: true
   - name: aeroplane_manufacturers
     config:
       alias: aeroplane_manufacturer
-      
+    description: Information about aeroplane manufacturers
+    columns:
+      - name: manufacturer_id
+        description: Unique identifier of an aeroplane manufacturer.
+        data_type: int
+        quote: true
+      - name: manufacturer_name
+        description: Name of the manufacturer
+        data_type: string
+        quote: true
   - name: aeroplane_models
     config:
       alias: aeroplane_model
-      
+    description: Aeroplane models
+    columns:
+      - name: model_id
+        description: Unique identifier of an aeroplane model.
+        data_type: int
+        quote: true
+      - name: model_name
+        description: Name of the model
+        data_type: string
+        quote: true
+      - name: manufacturer_id
+        description: Unique identifier of an aeroplane manufacturer. References
+          aeroplane_manufacturer.aeroplane_manufacturer_id
+        data_type: int
+        quote: true
+      - name: engine_type_id
+        description: Unique identifier of an aeroplane engine type. References
+          aeroplane_engine_type.engine_type_id
+        data_type: int
+        quote: true
+      - name: max_seats
+        description: Maximum number of seats of the model
+        data_type: int
+        quote: true
+      - name: max_weight
+        description: Maximum weight of the model
+        data_type: int
+        quote: true
+      - name: max_distance
+        description: Maximum distance of the model
+        data_type: int
+        quote: true
   - name: customer_group_types
     config:
       alias: customer_group_type
-      
+    description: Information about customer group types
+    columns:
+      - name: customer_group_type_id
+        description: Unique identifier of a customer group type.
+        data_type: int
+        quote: true
+      - name: customer_group_type_name
+        description: Name of a customer group type.
+        data_type: string
+        quote: true
   - name: customer_groups
     config:
       alias: customer_group
-      
+    description: Information about customer groups
+    columns:
+      - name: customer_group_id
+        description: Unique identifier of a customer group.
+        data_type: int
+        quote: true
+      - name: customer_group_name
+        description: Name of a customer group.
+        data_type: string
+        quote: true
+      - name: customer_group_type_id
+        description: Unique identifier of a customer group type. referneces
+          customer_group_type.customer_group_type_id
+        data_type: int
+        quote: true
+      - name: registry_number
+        data_type: string
+        quote: true
   - name: customers
     config:
       alias: customer
-      
+    description: Information about customers.
+    columns:
+      - name: customer_id
+        description: Unique identifier of a customer.
+        data_type: int
+        quote: true
+      - name: customer_name
+        description: Name of a customer.
+        data_type: string
+        quote: true
+      - name: customer_group_id
+        description: Unique identifier of a customer group. References
+          customer_group.customer_group_id
+        data_type: int
+        quote: true
+      - name: email
+        description: Email of a customer.
+        data_type: string
+        quote: true
+      - name: phone_number
+        description: Phone number of a customer.
+        data_type: string
+        quote: true
   - name: aeroplanes
     config:
       alias: aeroplane
-      
+    description: Information about aeroplanes used by Air Boltic
+    columns:
+      - name: aeroplane_id
+        description: Unique identifier of an aeroplane
+        data_type: int
+        quote: true
+      - name: model_id
+        description: Unique identifier of an aeroplane model. References
+          aeroplane_model.aeroplane_model_id
+        data_type: int
+        quote: true
   - name: cities
     config:
       alias: city
-      
+    description: Information about cities.
+    columns:
+      - name: city_id
+        description: Unique identifier of a city.
+        data_type: int
+        quote: true
+      - name: city_name
+        description: Name of a city.
+        data_type: string
+        quote: true
   - name: trips
     config:
       alias: trip
-      
+    description: Information about trips of Air boltic.
+    columns:
+      - name: trip_id
+        description: Unique identifier of a trip
+        data_type: int
+        quote: true
+      - name: departure_city_id
+        description: Unique identifier of the departure city. References city.city_id
+        data_type: int
+        quote: true
+      - name: arrival_city_id
+        description: Unique identifier of the arrival city. References city.city_id
+        data_type: int
+        quote: true
+      - name: aeroplane_id
+        description: Unique identifier of the aeroplane which makes the flight. References aeroplane.aeroplane_id
+        data_type: int
+        quote: true
+      - name: start_timestamp
+        description: Time of departure
+        data_type: timestamp
+        quote: true
+      - name: end_timestamp
+        description: Time of arrival
+        data_type: timestamp
+        quote: true
+  - name: trip_order_statuses
+    config:
+      alias: trip_order_status
+    description: Information about statuses a trip order can be in.
+    columns:
+      - name: status_id
+        description: Unique identifier of a status
+        data_type: int
+        quote: true
+      - name: status_name
+        description: Name of a status
+        data_type: string
+        quote: true
   - name: trip_orders
     config:
       alias: trip_order
+      description: Information about trip orders made by customers
+      columns:
+      - name: order_id
+        description: Unique identifier of a trip order.
+        data_type: int
+        quote: true
+      - name: customer_id
+        description: Unique identifier of a trip customer. References customer.customer_id.
+        data_type: int
+        quote: true
+      - name: trip_id
+        description: Unique identifier of a trip. References trip.trip_id.
+        data_type: int
+        quote: true
+      - name: price_amt
+        description: Price of the trip
+        data_type: double
+        quote: true
+      - name: seat_no
+        description: Seat number of the customer during a trip
+        data_type: string
+        quote: true
