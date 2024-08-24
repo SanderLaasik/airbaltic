@@ -33,12 +33,13 @@ models:
   airboltic:
     # Config indicated by + and applies to all files under models/example/
     staging:
-      +materialized: table
+      +materialized: incremental
+      +incremental_strategy: insert_overwrite
     intermediate:
       +materialized: ephemeral
     main:
       +materialized: incremental
       +incremental_strategy: merge
       +file_format: hudi
-    dmart:
+    marts:
       +materialized: view

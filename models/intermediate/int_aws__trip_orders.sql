@@ -1,6 +1,6 @@
 WITH orders AS (
     SELECT
-        order_id,
+        order_id AS trip_order_id,
         customer_id,
         trip_id,
         price_amt,

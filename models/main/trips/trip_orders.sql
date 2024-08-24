@@ -6,7 +6,7 @@
 
 WITH orders AS (
     SELECT
-        order_id,
+        trip_order_id,
         customer_id,
         trip_id,
         price_amt,
